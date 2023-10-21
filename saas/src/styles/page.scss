@@ -1,0 +1,22 @@
+.quillHeading{
+  a{
+    text-decoration: none;
+    display: flex;
+    gap:.4rem;
+    align-items: center;
+    background-color: black;
+    color:white;
+    width: max-content;
+    padding: 1rem 1.5rem;
+    border: none;
+  }
+  
+}
+.images{
+  border: 4px solid red;
+    .imgContainer{
+      width: 50vw;
+      height: 90vh;
+      position: relative;
+    }
+  }
