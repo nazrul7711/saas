@@ -1,5 +1,4 @@
-
-
+console.log(document)
 /*
 if u have newArr = [...arr] will change in newArr cause change in arr?
 
@@ -55,6 +54,47 @@ difference between map and object?
 how u will find keys and values and entries of object and map?
 
 what is common between set and map?
+
+how to merge two objects? can u merge multiple objects?
+
+what is object deconstruring?
+
+what is spread operator? and what is rest operator?
+
+how var is different from let and const when it comes to attaching variables to window object?
+
+how queryselector and queryselectorall work?
+
+how to count number of child elements how to find firstChild and what is the diff between firstChild and firstElementChild?
+
+can we use useRef and add and remove a CSS class how to do that?
+
+how will u check if a parent element has a child element or a div has a className?
+
+how to put a element into focus and how to know if which element is in focus?
+
+how to know if the document is loading or complete?
+
+suppose u have some data u wanna assign to a element how to do that and how to access that data? can u assign multiple data?can u put a condition if that data exist?
+
+what is a node? text node , attribute node?
+
+how will you scroll a element into view?what if u want to scroll the bottom of the elemetn to top?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

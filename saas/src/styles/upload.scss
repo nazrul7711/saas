@@ -1,0 +1,14 @@
+@import "variables";
+
+.dialog {
+  
+  .upload {
+    border: none;
+    background-color: $sky-blue-color;
+    color: white;
+    padding: 0.8rem 1.4rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}

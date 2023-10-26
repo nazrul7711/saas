@@ -1,0 +1,47 @@
+.navbar {
+  height: 80px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: black;
+    }
+    .left {
+    }
+    .right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      a {
+        color: rgb(67, 67, 67);
+        font-weight: normal;
+        font-size: 1rem;
+
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.8rem;
+        &:hover {
+          background-color: rgb(238, 238, 238);
+        }
+      }
+      a:last-child {
+        color: rgb(255, 255, 255);
+        font-weight: normal;
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        background-color: black;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "variables";
+.modal-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  .backdrop {
+    backdrop-filter: blur(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 89;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .modal {    
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    min-height:45%;
+    width: 45%;
+    z-index: 999;
+    background-color: white;
+    box-shadow: 5px 5px 25px rgb(131, 131, 131,.4);
+    border-radius: .5rem;
+    padding: 1rem;
+    .dropbox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 44vh;
+      width: 100%;
+      background-color: rgb(241, 241, 241);
+      border-radius: .5rem;
+      strong{
+        color: rgb(122, 122, 122);
+      }
+      cursor: pointer;
+      .file{
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+      }
+    }
+    .close{
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      color: $sky-blue-color;
+      cursor: pointer;
+
+    }
+  }
+}
