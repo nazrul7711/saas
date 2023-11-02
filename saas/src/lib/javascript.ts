@@ -1,4 +1,4 @@
-console.log(document)
+console.log(document);
 /*
 if u have newArr = [...arr] will change in newArr cause change in arr?
 
@@ -80,6 +80,30 @@ suppose u have some data u wanna assign to a element how to do that and how to a
 what is a node? text node , attribute node?
 
 how will you scroll a element into view?what if u want to scroll the bottom of the elemetn to top?
+
+suppose u have selected a div then how will u change its color with javascript?
+
+how will u get all the css properties, length of items, how to get a value of css property,remove a property and set a property
+
+does this work if the style is in css file?
+
+how to get style of a div when u have given style in css file?
+
+use element.classList.add or remove or toggle ?
+
+if i have a child component which is absolute positioned to a parent element how to know the height of the element in respect to parent element?
+
+what values scrollHeight, scrollWidth, scrollLeft and scrollTop give?
+
+EVENTS DOM
+
+how to stop event propagation ? and what event.preventDefault will do?
+
+suppose u wanna get the coordinates of a mouse or a div how?
+
+
+
+
 
 
 

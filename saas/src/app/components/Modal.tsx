@@ -1,5 +1,11 @@
 "use client";
-import React, { ReactNode, useCallback, useContext, useState } from "react";
+import React, {
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { SaasContext } from "../providers/ContextProvider";
 import "@/styles/modal.scss";
 import {
@@ -12,9 +18,24 @@ import Dropzone from "react-dropzone";
 const Modal = ({ children }: { children: ReactNode }) => {
   let ctx = useContext(SaasContext);
   let [isUploading, setIsUploading] = useState<boolean>(true);
+  let progressRef = useRef(null);
+  let [progress, setProgress] = useState(0);
+  let progressSteps = () => {
+    setProgress(0);
+    const interval = setInterval(() => {
+      setProgress((previous) => {
+        if (previous >= 95) {
+          clearInterval(interval);
+          return previous;
+        }
+        return previous + 5;
+      });
+    }, 500);
+    return interval;
+  };
 
   return (
-    <div className="modal-wrapper">
+    <div className="modal-wrapper" id="wrapper">
       {" "}
       {ctx?.showModal && (
         <div
@@ -25,7 +46,18 @@ const Modal = ({ children }: { children: ReactNode }) => {
       {ctx?.showModal && (
         <div className="modal">
           <div>
-            <Dropzone multiple={false} onDrop={(accept) => console.log(accept)}>
+            <Dropzone
+              multiple={false}
+              onDrop={async(acceptedFiles) => {
+                setIsUploading(true);
+                let progressInterval = progressSteps();
+                await new Promise((resolve) =>
+                  setTimeout(() => resolve("hello"), 15000)
+                );
+                clearInterval(progressInterval);
+                setProgress(100);
+              }}
+            >
               {({ getRootProps, getInputProps, acceptedFiles }) => (
                 <div {...getRootProps()} className="dropbox">
                   <input {...getInputProps()} />
@@ -43,11 +75,11 @@ const Modal = ({ children }: { children: ReactNode }) => {
 
                   {isUploading ? (
                     <div>
-                      <input
-                        type="range"
-                        min="0"
-                        max="100"
-                      />
+                      <div
+                        className="progress-bar"
+                        ref={progressRef}
+                        style={{ "--width": progress } as React.CSSProperties}
+                      ></div>
                     </div>
                   ) : null}
                 </div>

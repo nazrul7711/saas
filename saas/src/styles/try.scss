@@ -1,18 +1,49 @@
 .try{
+  nav{
+    height:100px;
+    background-color: skyblue;
+    position: fixed;
+    inset: 0;
+  }
+  .two{
+    color:orange;
+    font-size: large;
+  }
   .one{
     color:green
+  }
+  .parent{
+    height: 50vh;
+    width: 100vw;
+    background-color: burlywood;
+    position: relative;
+    .child{
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: 20vh;
+      width: 100vw;
+      background-color: brown;
+    }
   }
   .scroll{
     height: 100vh;
     width: 100vw;
     background-color: beige;
+    overflow: auto;
+    display: flex;
+    div{
+      flex: 0 0 auto;
+      width: 500px;
+
+    }
   }
   .scrollOne{
     height: 100vh;
     width: 100vw;
     background-color: rgb(8, 159, 21);
   }
-  .scrolltwo{
+  .scrolltwo{ 
     height: 100vh;
     width: 100vw;
     background-color: rgb(110, 110, 24);
