@@ -1,6 +1,6 @@
-console.log(document);
+
 /*
-if u have newArr = [...arr] will change in newArr cause change in arr?
+if u have newArr = [...arr] will change in newArr cause change in arr? 
 
 what about newArr = Array.from(arr) will this cause change?
 
@@ -101,7 +101,55 @@ how to stop event propagation ? and what event.preventDefault will do?
 
 suppose u wanna get the coordinates of a mouse or a div how?
 
+FILE TYPE
+if u have a file selected from input type files then how do u identify name of the file,type and its size
 
+for drag and drop do u have events?
+
+ERROR
+give me some error types? what is the base error class ? and do all error objects have message?
+
+how will u ascertain type of error in try and catch block
+
+how to throw an Error and what happens if u throw an error?
+
+diff between JSON and object?
+
+NETWORK requests
+
+why do we use FormData?
+
+CORS?
+
+FETCH
+fetch("somUrl") returns what?
+
+let res = await fetch("someurl") then how to get status and statusText and what value they return?
+
+why create a url with a string from new URL method and why use URLSearchParams
+
+const url = new URL('https://example.com/search?q=javascript&category=tutorials'); how to get the searchparameter here?
+
+const params = new URLSearchParams(url.search); how to get q key value from params?
+
+what kind of value can we pass in body in fetch api?
+
+cache:"no-store" and default value do what?
+
+body,cache,headers,method
+
+headers:{"Content-Type":"application/json","application/x-www-form-urlencoded","multipart/form-data"} when to use which ? and what to do when u want to pass data in url
+
+why do we need await res.json()
+
+STORAGE IN BROWSER
+if a server has to store some information in browser how does it do that?
+
+hey if u want to check if a variable is array or not how to do that?
+
+insert values let name = values[i++]
+
+difference between nodeList and array
 
 
 

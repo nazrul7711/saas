@@ -14,12 +14,16 @@ import {
   AiOutlineFilePpt,
 } from "react-icons/ai";
 import Dropzone from "react-dropzone";
+import { useRouter } from "next/navigation";
 
 const Modal = ({ children }: { children: ReactNode }) => {
   let ctx = useContext(SaasContext);
-  let [isUploading, setIsUploading] = useState<boolean>(true);
+  let [isUploading, setIsUploading] = useState<boolean>(false);
   let progressRef = useRef(null);
   let [progress, setProgress] = useState(0);
+
+  let router = useRouter();
+
   let progressSteps = () => {
     setProgress(0);
     const interval = setInterval(() => {
@@ -48,7 +52,7 @@ const Modal = ({ children }: { children: ReactNode }) => {
           <div>
             <Dropzone
               multiple={false}
-              onDrop={async(acceptedFiles) => {
+              onDrop={async (acceptedFiles) => {
                 setIsUploading(true);
                 let progressInterval = progressSteps();
                 await new Promise((resolve) =>
@@ -56,6 +60,8 @@ const Modal = ({ children }: { children: ReactNode }) => {
                 );
                 clearInterval(progressInterval);
                 setProgress(100);
+                ctx?.setShowModal(false);
+                router.push(`/dashboard/${23}`);
               }}
             >
               {({ getRootProps, getInputProps, acceptedFiles }) => (
