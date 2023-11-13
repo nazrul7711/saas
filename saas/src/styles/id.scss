@@ -1,0 +1,48 @@
+@import "variables";
+.id {
+  display: flex;
+  
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      padding-bottom: 1rem;
+      .left-side {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        .input-side {
+          display: flex;
+          gap: .4rem;
+          align-items: center;
+          input {
+            width: 1.5rem;
+            outline: none;
+            padding: 5px;
+          }
+        }
+      }
+      .right-side{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        select{
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    .loading {
+      font-size: 50px;
+    }
+  }
+  .right{
+    flex: 1;
+    border: 2px solid yellow;
+  }
+}

@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 export async function GET(req: Request) {
-  const pathReference = ref(storage, "autoCV latest.pdf");
+  const pathReference = ref(storage, "test.pdf");
   let url =await new Promise((resolve,reject)=>{
     getDownloadURL(pathReference)
       .then((url) => {
