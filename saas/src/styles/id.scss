@@ -12,6 +12,9 @@
       justify-content: space-between;
       border-bottom: 1px solid rgb(221, 221, 221);
       padding-bottom: 1rem;
+      .up,.down,.search,.refresh,.close{
+        cursor: pointer;
+      }
       .left-side {
         display: flex;
         gap: 2rem;

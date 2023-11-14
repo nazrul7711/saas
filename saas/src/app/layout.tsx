@@ -5,6 +5,7 @@ import ContextProvider from "./providers/ContextProvider";
 import Modal from "./components/Modal";
 import "@/styles/globals.scss"
 import BlurProvider from "./components/BlurProvider";
+import "simplebar-react/dist/simplebar.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
