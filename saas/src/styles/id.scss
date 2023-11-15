@@ -1,7 +1,7 @@
 @import "variables";
 .id {
   display: flex;
-  
+
   .left {
     flex: 1;
     display: flex;
@@ -12,7 +12,11 @@
       justify-content: space-between;
       border-bottom: 1px solid rgb(221, 221, 221);
       padding-bottom: 1rem;
-      .up,.down,.search,.refresh,.close{
+      .up,
+      .down,
+      .search,
+      .refresh,
+      .close {
         cursor: pointer;
       }
       .left-side {
@@ -21,7 +25,7 @@
         align-items: center;
         .input-side {
           display: flex;
-          gap: .4rem;
+          gap: 0.4rem;
           align-items: center;
           input {
             width: 1.5rem;
@@ -30,11 +34,11 @@
           }
         }
       }
-      .right-side{
+      .right-side {
         display: flex;
         gap: 2rem;
         align-items: center;
-        select{
+        select {
           border: none;
           outline: none;
         }
@@ -44,8 +48,15 @@
       font-size: 50px;
     }
   }
-  .right{
+  .right {
     flex: 1;
     border: 2px solid yellow;
+    .inputField {
+      width: 90%;
+      max-height: 500px;
+      outline: none;
+      overflow-y: auto;
+
+    }
   }
 }

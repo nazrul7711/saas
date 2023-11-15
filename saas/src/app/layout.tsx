@@ -6,6 +6,7 @@ import Modal from "./components/Modal";
 import "@/styles/globals.scss"
 import BlurProvider from "./components/BlurProvider";
 import "simplebar-react/dist/simplebar.min.css";
+import AuthProvider from "./providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ContextProvider>
-          <BlurProvider>
-            <Modal>
-              <Navbar />
-              {children}
-            </Modal>
-          </BlurProvider>
-        </ContextProvider>
+        <AuthProvider>
+          {" "}
+          <ContextProvider>
+            <BlurProvider>
+              <Modal>
+                <Navbar />
+                {children}
+              </Modal>
+            </BlurProvider>
+          </ContextProvider>
+        </AuthProvider>
       </body>
     </html>
   );

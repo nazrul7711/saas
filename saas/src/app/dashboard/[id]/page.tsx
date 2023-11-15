@@ -13,7 +13,7 @@ import {
 import { GrRefresh } from "react-icons/gr";
 import { useResizeDetector } from "react-resize-detector";
 import SimpleBar from "simplebar-react";
-
+import Chatwrapper from "@/app/components/Chatwrapper";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -24,12 +24,13 @@ interface PageProps {
 }
 
 const Id = ({ params }: PageProps) => {
-  const [rotation,setRotation] = useState<number>(0)
+  const [rotation, setRotation] = useState<number>(0);
   const [numPages, setNumPages] = useState<number>();
   const [file, setFile] = useState<string | null>(null);
   const [currentPageNumber, setCurrentPageNumber] = useState<number>(1);
   const { width, ref } = useResizeDetector();
   const [font, setFont] = useState<number>(100);
+  const [textareaHeight, setTextareaHeight] = useState(50);
 
   useEffect(() => {
     let fetcher = async () => {
@@ -57,8 +58,20 @@ const Id = ({ params }: PageProps) => {
   function selectHandler(e: React.ChangeEvent<HTMLSelectElement>) {
     setFont(parseInt(e.target.value));
   }
-  function rotationHandler(){
-    setRotation(prev=>prev+90)
+  function rotationHandler() {
+    setRotation((prev) => prev + 90);
+  }
+  function textareaChangeHandler(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    let contentHeight = e.target.scrollHeight;
+    console.log(contentHeight, "hello");
+    if (contentHeight > 100) {
+      setTextareaHeight(100);
+    } else if (contentHeight > 50) {
+      setTextareaHeight(contentHeight);
+    } else {
+      setTextareaHeight(50);
+    }
+    console.log(contentHeight, textareaHeight);
   }
 
   let { id } = params;
@@ -92,7 +105,7 @@ const Id = ({ params }: PageProps) => {
               <option value={0.25}>25%</option>
             </select>
             <div className="refresh" onClick={rotationHandler}>
-            <GrRefresh size={20} />
+              <GrRefresh size={20} />
             </div>
             <AiOutlineClose size={20} className="close" />
           </div>
@@ -116,7 +129,9 @@ const Id = ({ params }: PageProps) => {
         </SimpleBar>
       </div>
       <div className="right">
-        <div className="some"></div>
+        <div className="some">
+          <Chatwrapper/>
+        </div>
       </div>
     </div>
   );
