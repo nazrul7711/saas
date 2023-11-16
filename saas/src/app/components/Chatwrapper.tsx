@@ -1,11 +1,22 @@
 import React from 'react'
+import Messages from './Messages'
+import "@/styles/chatwrapper.scss"
 
 const Chatwrapper = () => {
+  function inputChangeHandler(){
+    
+  }
   return (
-    <div>
-      
+    <div className="chatwrapper">
+      <div className="messages">
+        <Messages />
+      </div>
+      <div className="input">
+        <textarea onChange={inputChangeHandler}></textarea>
+        <button>submit</button>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Chatwrapper

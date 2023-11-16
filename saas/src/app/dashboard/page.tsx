@@ -1,4 +1,4 @@
-"use client";
+
 import "@/styles/dashboard.scss";
 import UploadButton from "../components/UploadButton";
 import { BiGhost } from "react-icons/bi";
@@ -6,11 +6,6 @@ import { AiOutlineDelete, AiOutlinePlus } from "react-icons/ai";
 import { CiFlag1 } from "react-icons/ci";
 import "react-loading-skeleton/dist/skeleton.css";
 import Link from "next/link";
-import { useCallback, useRef } from "react";
-import { useDropzone } from "react-dropzone";
-import Dropzone from "react-dropzone";
-
-// {id:1, title: "India", mocked: "mocked", date: "24-11-2023" }
 
 const Dashboard = () => {
   let data = [];

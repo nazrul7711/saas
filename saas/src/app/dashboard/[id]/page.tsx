@@ -130,7 +130,7 @@ const Id = ({ params }: PageProps) => {
       </div>
       <div className="right">
         <div className="some">
-          <Chatwrapper/>
+          <Chatwrapper fileId={id} />
         </div>
       </div>
     </div>

@@ -1,0 +1,13 @@
+@import "variables";
+.chatwrapper {
+  .input {
+    display: flex;
+    textarea {
+      width: 80%;
+      outline: none;
+    }
+    button{
+      cursor: pointer;
+    }
+  }
+}

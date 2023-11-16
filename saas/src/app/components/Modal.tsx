@@ -2,7 +2,6 @@
 import React, {
   ReactNode,
   useContext,
-  useEffect,
   useRef,
   useState,
 } from "react";
@@ -53,15 +52,37 @@ const Modal = ({ children }: { children: ReactNode }) => {
             <Dropzone
               multiple={false}
               onDrop={async (acceptedFiles) => {
+                const file = acceptedFiles[0];
                 setIsUploading(true);
                 let progressInterval = progressSteps();
-                await new Promise((resolve) =>
-                  setTimeout(() => resolve("hello"), 15000)
-                );
-                clearInterval(progressInterval);
-                setProgress(100);
-                ctx?.setShowModal(false);
-                router.push(`/dashboard/${23}`);
+
+                const formData = new FormData();
+                formData.append("pdfFile", file);
+
+                try {
+                  // Use fetch to send the file to the backend
+                  const response = await fetch(
+                    "http://localhost:3000/api/handleFile",
+                    {
+                      method: "POST",
+                      body: formData,
+                    }
+                  );
+
+                  if (response.ok) {
+                    // File upload successful, handle the response as needed
+                    const responseData = await response.json();
+                    clearInterval(progressInterval);
+                    setProgress(100);
+                    ctx?.setShowModal(false);
+                    router.push(`/dashboard/${responseData.msg.id}`);
+                  } else {
+                    // File upload failed, handle the error
+                    console.error("File upload failed:", response.statusText);
+                  }
+                } catch (error) {
+                  console.error("Error uploading file:", error);
+                }
               }}
             >
               {({ getRootProps, getInputProps, acceptedFiles }) => (

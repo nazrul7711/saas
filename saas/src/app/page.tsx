@@ -81,4 +81,12 @@ export default function Home() {
     </div>
   );
 }
-//1.09
+/*
+use node version 20.1.0 otherwise u might face issue that backend is not supporting multiform data
+
+when copying code for firebase use whole code like dont delete partial code like i did deleting snapshort part of the uploading function
+
+u can write  a promise and also write await in front of it to get the file 
+
+
+ */
